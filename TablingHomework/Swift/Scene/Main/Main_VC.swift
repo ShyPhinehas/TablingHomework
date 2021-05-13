@@ -32,7 +32,7 @@ class Main_VC: UIViewController {
     
     private func setupColectionView(){
         self.bindToCells()
-//        self.bindTouchEvent()
+        self.bindTouchEvent()
     }
     
     private func bindToCells(){
