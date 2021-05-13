@@ -9,7 +9,7 @@ import UIKit
 
 class Image_VC: UIViewController {
     
-    private let vm = Image_VM()
+    let vm = Image_VM()
     
     @IBOutlet weak var picture: DImageView!
     

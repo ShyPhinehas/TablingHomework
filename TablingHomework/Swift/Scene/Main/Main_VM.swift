@@ -8,13 +8,19 @@
 import Foundation
 import RxSwift
 
+typealias ShowAlerts = (is: Bool, title: String, desc: String)
+
 class Main_VM {
-    func loadImageData(call: @escaping (Observable<[ImageInfo]>, String?)->()){
+    
+    var imageinfos: Box<[ImageInfo]?> = Box(nil)
+    var isShowAlerts: Box<ShowAlerts> = Box((false,"",""))
+    
+    func loadImageData(){
         DataCenter.shared.request(api: .image_list).toValue(type: [ImageInfo].self) { res in
             if let em = res.serverReturn.errorMessage{
-                call(Observable.empty(), em)
+                self.isShowAlerts.value = (true,"",em)
             }else{
-                call(Observable.of(res.data!), nil)
+                self.imageinfos.value = res.data!
             }
         }
     }
