@@ -19,15 +19,11 @@ class Main_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupColectionView()
-        
-        
-        
+        self.vm.loadImageData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.vm.loadImageData()
     }
     
     private func setupColectionView(){
@@ -42,6 +38,10 @@ class Main_VC: UIViewController {
             guard let ii = imageInfos else{
                 return
             }
+            
+//            guard let delegate = self.collectionView.delegate else {
+//                return
+//            }
             
             let observal = Observable.of(ii)
             observal.bind(to: self.collectionView.rx.items(cellIdentifier: "MainCollecotionViewCell")) {  row, element, cell in
