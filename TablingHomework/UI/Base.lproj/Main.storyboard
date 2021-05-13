@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kte-wk-bt0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="OiG-nt-VI9">
+            <objects>
+                <navigationController id="Kte-wk-bt0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BPW-7P-qoM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kNs-0u-fGd" kind="relationship" relationship="rootViewController" id="vnP-TQ-gWq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAs-yh-UpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-433" y="175"/>
+        </scene>
+        <!--Tabling Homework-->
+        <scene sceneID="TSW-9l-zKr">
+            <objects>
+                <viewController id="kNs-0u-fGd" customClass="Main_VC" customModule="TablingHomework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HOe-sM-uqo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m8O-AJ-MX7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="p9c-9A-A4W">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="30" minY="10" maxX="30" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainCollecotionViewCell" reuseIdentifier="MainCollecotionViewCell" id="kN7-ma-lT9" customClass="MainCollecotionViewCell" customModule="TablingHomework" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="10" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MA4-5r-tfP">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wgN-bH-PRx" customClass="DImageView" customModule="TablingHomework" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wgN-bH-PRx" firstAttribute="top" secondItem="MA4-5r-tfP" secondAttribute="top" id="Aba-F9-SEQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="wgN-bH-PRx" secondAttribute="trailing" id="Q4Z-z3-seb"/>
+                                                <constraint firstAttribute="bottom" secondItem="wgN-bH-PRx" secondAttribute="bottom" id="adX-n5-krA"/>
+                                                <constraint firstItem="wgN-bH-PRx" firstAttribute="leading" secondItem="MA4-5r-tfP" secondAttribute="leading" id="kPB-hV-cqZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="image" destination="wgN-bH-PRx" id="U7D-ML-2wY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eZI-km-kPy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m8O-AJ-MX7" firstAttribute="bottom" secondItem="eZI-km-kPy" secondAttribute="bottom" constant="34" id="5aj-Ne-Xsl"/>
+                            <constraint firstItem="m8O-AJ-MX7" firstAttribute="leading" secondItem="eZI-km-kPy" secondAttribute="leading" id="Lwh-Gq-9zW"/>
+                            <constraint firstItem="m8O-AJ-MX7" firstAttribute="top" secondItem="eZI-km-kPy" secondAttribute="top" id="OEr-Yn-UiC"/>
+                            <constraint firstItem="m8O-AJ-MX7" firstAttribute="leading" secondItem="HOe-sM-uqo" secondAttribute="leading" id="ONi-Yc-5hc"/>
+                            <constraint firstItem="eZI-km-kPy" firstAttribute="trailing" secondItem="m8O-AJ-MX7" secondAttribute="trailing" id="lN1-9x-jAI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tabling Homework" id="QQm-FD-9pV"/>
+                    <connections>
+                        <outlet property="collectionView" destination="m8O-AJ-MX7" id="cxu-s0-B59"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ez-9N-PWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="175"/>
+        </scene>
+        <!--ImageVC-->
+        <scene sceneID="F5X-zt-yPm">
+            <objects>
+                <viewController storyboardIdentifier="Image_VC" id="Nzp-xk-3Vb" customClass="Image_VC" customModule="TablingHomework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B23-ZJ-gYW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p1v-Ae-9nH" customClass="DImageView" customModule="TablingHomework" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="298" width="414" height="310"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="p1v-Ae-9nH" secondAttribute="height" multiplier="207:155" id="Pcc-ue-RRE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="91Y-Ik-JJb"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="p1v-Ae-9nH" firstAttribute="width" secondItem="B23-ZJ-gYW" secondAttribute="width" id="LPh-0l-WCa"/>
+                            <constraint firstItem="p1v-Ae-9nH" firstAttribute="centerY" secondItem="91Y-Ik-JJb" secondAttribute="centerY" id="VoI-Lg-EmQ"/>
+                            <constraint firstItem="p1v-Ae-9nH" firstAttribute="centerX" secondItem="91Y-Ik-JJb" secondAttribute="centerX" id="myH-fD-ORC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZbA-dD-SuX"/>
+                    <connections>
+                        <outlet property="picture" destination="p1v-Ae-9nH" id="5j8-A7-Wwg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebA-AS-Y0p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="175"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
